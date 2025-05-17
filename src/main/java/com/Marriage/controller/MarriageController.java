@@ -28,7 +28,9 @@ public class MarriageController {
 	@PostMapping(value = "/bookMarriage", produces = { "application/json" }, consumes = { "application/json" })
 	public ResponseEntity<MarriageBookingInfromation> bookMarriageFromController(@RequestBody Guest guest) {
 		MarriageBookingInfromation marrInfo = bookService.bookMarriage(guest);
+		System.out.println("post method ended...");
 		return new ResponseEntity<MarriageBookingInfromation>(marrInfo, HttpStatus.OK);
+
 
 	}
 
